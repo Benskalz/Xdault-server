@@ -415,7 +415,7 @@ func (hc *HttpController) HandleHTTPCallback(w http.ResponseWriter, r *http.Requ
 			}
 			notificationTitle = fmt.Sprintf("Received %s BANANO", strconv.FormatFloat(asBan, 'f', -1, 64))
 		} else {
-			appName = "Natrium"
+			appName = "Kryptos"
 			asBan, err := utils.RawToNano(sendAmount.String(), true)
 			if err != nil {
 				klog.Errorf("Error converting raw to nano %s", err)
