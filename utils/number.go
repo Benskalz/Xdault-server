@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-const rawPerNanoStr = "1000000000000000000000000000000"
+const rawPerNanoStr = "100000000000000000000000000"
 const rawPerBananoStr = "100000000000000000000000000000"
 
 var rawPerBanano, _ = new(big.Float).SetString(rawPerBananoStr)
@@ -56,7 +56,7 @@ func RawToNano(raw string, truncate bool) (float64, error) {
 		return f, nil
 	}
 	// Truncate precision beyond 0.000001
-	asStr := asNano.Text('f', 6)
+	asStr := asNano.Text('f', 2)
 	truncated, _ := strconv.ParseFloat(asStr, 64)
 	return truncated, nil
 }
